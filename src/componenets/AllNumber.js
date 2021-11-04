@@ -24,11 +24,12 @@ const AllNumber = () => {
         console.log(selBr)
     }
 
-    useState(() => {
-
-        dispatch(loadSel);
-        
-    },[])
+    useEffect(() => {
+       
+        loadSel()
+       
+      
+    },[selBr])
 
 
     return (
