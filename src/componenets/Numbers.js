@@ -1,44 +1,59 @@
 import React,{useState, useEffect} from 'react'
+import { Card } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux'
 import { GET_SELECT_NUMBERS } from '../redux/constans/getNumber';
 
 
 const Numbers = ({broj,index}) => {
-
-const selBr = useSelector((state)=>state.selNumber);
+//selektor
+const selBrojevi = useSelector((state)=>state.selNumber);
 const dispatch = useDispatch();
 
+//ucitavanje selektovanih broja
 const loadNumbers=()=>{
+
   setBrojevi(broj)
 }
+
+//useEffect
   useEffect(() => {
     changeColor()
+
     loadNumbers()
    
   
 }, [])
 
+//akcija 
 const getSelNum = ()=>{
  return {
     type:GET_SELECT_NUMBERS,
-    payload:selBr.push(Izbrojevi)
+    payload:selBrojevi.push(Izbrojevi)
+    
   }
+  
 }
-
-const [Izbrojevi, setBrojevi] = useState([])
+//state
+const [Izbrojevi, setBrojevi] = useState()
 const [color, setColor] = useState({ backgroundColor: 'red' })
 const [disabled, setDisabled] = useState(false)
 
+
+//f-ja dodavanje broja i onemogucavanje buttona
 const getValue = (i) => {
+
     setDisabled(true)
-    console.log(selBr)
-    console.log(Izbrojevi)
+  
     dispatch(getSelNum)
-    if(selBr.length>10){
-      setDisabled(true)
+   
+
+    if(selBrojevi.length>10){
+      
       alert('Dodali ste 10 brojeva')
     }
-    
+
+    loadNumbers()
+ 
 }
   
      
@@ -46,7 +61,7 @@ const getValue = (i) => {
 
 
 
-
+//na osnovu indexa setovanje boja loptica
 function changeColor (){
 
     switch (index) {
@@ -121,9 +136,6 @@ function changeColor (){
       </div>
       
 
-  
-      
-      
       
       
 
@@ -131,6 +143,7 @@ function changeColor (){
       </>
    
     )
+   
 }
 
 export default Numbers

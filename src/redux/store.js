@@ -5,18 +5,16 @@ import { getAllNumber, getSelectedNumber } from './reducers/numReducer';
 
 
 const rootReducer = combineReducers({
+  selNumber:getSelectedNumber,
     numReducer:getAllNumber,
-    selNumber:getSelectedNumber
+    
   
   
   
   })
   
-  const initialState={
-  
-  }
-  
+
   let middlware = [thunk]
   
   
-  export const store = createStore(rootReducer,initialState,applyMiddleware(...middlware))
+  export const store = createStore(rootReducer,applyMiddleware(...middlware))

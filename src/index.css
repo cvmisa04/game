@@ -1,5 +1,6 @@
 .App{
-  display: inline-flex;
+  display: inline-block;
+  background-color: #6198ed;
 
 }
 
@@ -8,9 +9,9 @@
   display: flex;
   flex-wrap:wrap;
   flex-direction:row;
-  background-color: DodgerBlue;
+  background-color: #c2d9ff;
   width: 600px;
-  margin: 100px 30px;
+  margin: 50px 300px;
   justify-content:center;
 }
 .broj{
@@ -20,7 +21,7 @@
   text-align: center;
   line-height: 55px;
   font-size: 30px;
-  border-radius:50%;
+  border-radius:30%;
   justify-content:center;
   color:white;
   font-weight:bold;
