@@ -7,7 +7,7 @@ const Card = ({ a, index }) => {
     useState(()=>{
         changeColor()
     },[color])
-//na osnovu indexa setovanje boja loptica
+//na osnovu vrednosti setovanje boja loptica
 function changeColor (){
 
     switch (a) {
