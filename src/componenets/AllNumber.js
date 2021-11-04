@@ -74,15 +74,15 @@ const AllNumber = () => {
     return (
         <div>
             
-            <div className="flex-container" >
+            <div className="flex-container p-3" >
                 {broj.map((value, index) => (
 
                     <Numbers broj={value} key={index} index={index} />
 
                 ))}
                 {/* Dugmici za slucajnih 6 i resetovanje */}
-                <button className='ml-3 mt-4' style={{ background: "red", borderRadius: "10px", color: "white" }} onClick={() => randomize()}>Slucajnih 6</button>
-                <button className='ml-5 mt-4' style={{ background: "tomato", borderRadius: "10px", color: "black" }} onClick={() => reset()}>Reset</button>
+                <button className='ml-3 mt-4 mb-4' style={{ background: "red", borderRadius: "10px", color: "white" }} onClick={() => randomize()}>Slucajnih 6</button>
+                <button className='ml-5 mt-4 mb-4' style={{ background: "tomato", borderRadius: "10px", color: "black" }} onClick={() => reset()}>Reset</button>
 
 
             </div>
